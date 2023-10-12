@@ -6,10 +6,10 @@
     $nombres = $_POST['nombres'];
     $apellidos = $_POST['apellidos'];
 
-    $queryInsertar = "INSERT INTO alumno VALUES('$cod_estudiante', '$dni', '$nombres', '$apellidos')";
-$result = mysqli_query($conn, $queryInsertar);
+    $queryUpdate = "UPDATE  alumno SET dni='$dni', nombres= '$nombres', apellidos='$apellidos' 
+                    WHERE cod_estudiante='$cod_estudiante' ";
+$result = mysqli_query($conn, $queryUpdate);
 if ( $result) {
     Header("Location: index.php");
 }
-
 
